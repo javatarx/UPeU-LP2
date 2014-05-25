@@ -2,12 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.upeu</groupId>
-	<artifactId>ventas</artifactId>
+	<artifactId>ventas_1</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>ventas Maven Webapp</name>
+	<name>ventas_1 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -22,10 +28,10 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.20</version>
+			<version>5.1.30</version>
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>ventas</finalName>
+		<finalName>ventas_1</finalName>
 	</build>
 </project>

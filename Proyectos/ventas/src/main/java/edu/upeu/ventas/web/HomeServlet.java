@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String VIEW_HOME = "/pages/home.jsp";
+	private static final String VIEW_HOME = "/pages/home.jsp";
 
 	/**
-	 * Default constructor.
+	 * @see HttpServlet#HttpServlet()
 	 */
 	public HomeServlet() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,11 +28,6 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("HomeServlet.doGet()");
-		//
-		// PrintWriter out = response.getWriter();
-		// out.println("<b style='color:red;'>Hola</b> mundo");
-
 		request.getRequestDispatcher(VIEW_HOME).forward(request, response);
 	}
 
@@ -41,7 +37,7 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("HomeServlet.doPost()");
+		// TODO Auto-generated method stub
 	}
 
 }
