@@ -35,7 +35,9 @@ public class UsuarioDAOJdbcImpl implements UsuarioDAO {
 	}
 
 	public List<Usuario> listar() {
+
 		List<Usuario> usuarios = new ArrayList<Usuario>();
+
 		try {
 			Connection conn = DBConexion.getConexion();
 
