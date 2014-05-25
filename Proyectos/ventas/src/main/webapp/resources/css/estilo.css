@@ -1,0 +1,27 @@
+body {
+	text-align: center;
+	margin: 0 auto;
+}
+
+form {
+	background: #ACBDC6;
+	border-radius: 50%;
+	margin: 0 auto;
+	height: 20em;
+	position: relative;
+	top: 100px;
+	width: 20em;
+	-webkit-border-radius: 50%;
+	width: 20em;
+	top: 100px;
+}
+
+#contenedorLogin {
+	vertical-align: middle;
+	position: relative;
+	top: 10%;
+}
+
+#contenedorLogin img {
+	width: 100px;
+}

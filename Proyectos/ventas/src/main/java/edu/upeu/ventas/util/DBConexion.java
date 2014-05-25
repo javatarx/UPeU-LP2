@@ -27,7 +27,7 @@ public class DBConexion {
 		return conn;
 	}
 
-	public void exit() {
+	public static void exit() {
 		try {
 			if (conn != null) {
 				conn.close();
