@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.upeu</groupId>
-	<artifactId>ventas_1</artifactId>
+	<artifactId>ventas</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>ventas_1 Maven Webapp</name>
+	<name>ventas Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -32,6 +32,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>ventas_1</finalName>
+		<finalName>ventas</finalName>
 	</build>
 </project>

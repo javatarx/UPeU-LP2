@@ -2,7 +2,6 @@ package edu.upeu.ventas.web;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.upeu.ventas.util.DBConexion;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -20,31 +21,11 @@ public class LoginServlet extends HttpServlet {
 	private static final String VIEW_HOME = "/pages/home.jsp";
 	private static final String VIEW_ERROR_LOGIN = "/pages/error_login.jsp";
 
-	Connection conn = null;
-
-	public Connection getConexion() throws SQLException {
-
-		if (conn == null) {
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				conn = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/ventas", "root", "123456");
-				System.out.println("Conexion exitosa");
-			} catch (ClassNotFoundException e) {
-				System.out.println("Conexion fallida");
-				e.printStackTrace();
-			}
-		}
-
-		return conn;
-	}
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public LoginServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -67,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		try {
-			Connection c = getConexion();
+			Connection c = DBConexion.getConexion();
 
 			PreparedStatement ps = c
 					.prepareStatement("select * from usuario where username = ? and password = ?");
