@@ -60,6 +60,7 @@ public class PersonaDAOJdbcImpl implements PersonaDAO {
 		} finally {
 			DBConexion.exit();
 		}
+		System.out.println("Tamanio:"+lista.size());
 		return lista;
 	}
 

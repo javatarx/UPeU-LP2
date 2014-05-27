@@ -5,13 +5,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.upeu.ventas.service.PersonaService;
+import edu.upeu.ventas.service.impl.PersonaServiceImpl;
 import edu.upeu.ventas.util.DBConexion;
+import edu.upeu.ventas.web.form.PersonaForm;
 
 /**
  * Servlet implementation class LoginServlet
@@ -20,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW_HOME = "/pages/home.jsp";
 	private static final String VIEW_ERROR_LOGIN = "/pages/error_login.jsp";
+	PersonaService personaService = new PersonaServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -57,6 +62,11 @@ public class LoginServlet extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {
+				List<PersonaForm> lista = personaService.getListaPersonas();
+				for (PersonaForm personaForm : lista) {
+					System.out.println(personaForm.getNombre());
+				}
+				request.setAttribute("lp", lista);
 				request.getRequestDispatcher(VIEW_HOME).forward(request,
 						response);
 			} else {

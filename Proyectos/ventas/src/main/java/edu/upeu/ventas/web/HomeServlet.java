@@ -37,6 +37,9 @@ public class HomeServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		List<PersonaForm> lista = personaService.getListaPersonas();
+		for (PersonaForm personaForm : lista) {
+			System.out.println(personaForm.getNombre());
+		}
 		request.setAttribute("lp", lista);
 
 		request.getRequestDispatcher(VIEW_HOME).forward(request, response);

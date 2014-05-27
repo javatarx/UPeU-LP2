@@ -18,7 +18,8 @@ public class PersonaServiceImpl implements PersonaService {
 		List<PersonaForm> l = new ArrayList<PersonaForm>();
 
 		List<Persona> lista = personaDAO.listarPersonas();
-
+		System.out.println("Lista devuelta :" +lista.size());
+		
 		for (Persona p : lista) {
 			PersonaForm pf = new PersonaForm();
 			pf.setId(p.getId());

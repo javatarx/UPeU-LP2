@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,29 +7,23 @@
 	<table>
 		<caption>Lista de Personas</caption>
 		<tr>
+			<td colspan="4"><a href="nuevaPersona">Nuevo</a></td>
+		</tr>
+		<tr>
 			<th>#</th>
 			<th>Paterno</th>
 			<th>Materno</th>
 			<th>Nombre</th>
 		</tr>
-		<tr>
-			<td>1</td>
-			<td>Mariaca</td>
-			<td>Mamani</td>
-			<td>Jesus</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Mariaca</td>
-			<td>Mamani</td>
-			<td>Jesus</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Mariaca</td>
-			<td>Mamani</td>
-			<td>Jesus</td>
-		</tr>
+		<c:forEach items="${lp}" var="p" varStatus="ps">
+			<tr>
+				<td><c:out value="${ps.count}"></c:out></td>
+				<td><c:out value="${p.apePat}"></c:out></td>
+				<td><c:out value="${p.apeMat}"></c:out></td>
+				<td><c:out value="${p.nombre}"></c:out></td>
+			</tr>
+		</c:forEach>
+
 	</table>
 </body>
 </html>
