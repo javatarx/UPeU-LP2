@@ -6,4 +6,6 @@ import edu.upeu.ventas.web.form.PersonaForm;
 
 public interface PersonaService {
 	List<PersonaForm> getListaPersonas();
+
+	void guardarPersona(PersonaForm p);
 }

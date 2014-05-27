@@ -18,8 +18,8 @@ public class PersonaServiceImpl implements PersonaService {
 		List<PersonaForm> l = new ArrayList<PersonaForm>();
 
 		List<Persona> lista = personaDAO.listarPersonas();
-		System.out.println("Lista devuelta :" +lista.size());
-		
+		System.out.println("Lista devuelta :" + lista.size());
+
 		for (Persona p : lista) {
 			PersonaForm pf = new PersonaForm();
 			pf.setId(p.getId());
@@ -31,6 +31,15 @@ public class PersonaServiceImpl implements PersonaService {
 		}
 
 		return l;
+	}
+
+	public void guardarPersona(PersonaForm p) {
+		Persona persona = new Persona();
+		persona.setApePat(p.getApePat());
+		persona.setApeMat(p.getApeMat());
+		persona.setNombre(p.getNombre());
+
+		personaDAO.guardar(persona);
 	}
 
 }
