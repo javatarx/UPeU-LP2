@@ -1,6 +1,6 @@
-package edu.upeu.ventas.dominio;
+package edu.upeu.ventas.web.form;
 
-public class Persona {
+public class PersonaForm {
 
 	private String id;
 	private String nombre;
