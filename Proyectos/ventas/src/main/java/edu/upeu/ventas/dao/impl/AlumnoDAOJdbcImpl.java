@@ -7,19 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.upeu.ventas.dao.PersonaDAO;
-import edu.upeu.ventas.dominio.Persona;
+import edu.upeu.ventas.dao.AlumnoDAO;
+import edu.upeu.ventas.dominio.Alumno;
 import edu.upeu.ventas.util.DBConexion;
 
-public class PersonaDAOJdbcImpl implements PersonaDAO {
+public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 
-	public void guardar(Persona p) {
+	public void guardar(Alumno p) {
 
 		try {
 			Connection conn = DBConexion.getConexion();
 
 			PreparedStatement ps = conn
-					.prepareStatement("insert into persona(id,nombre,ape_pat,ape_mat) values(uuid(),?,?,?)");
+					.prepareStatement("insert into alumno(id,nombre,ape_pat,ape_mat) values(uuid(),?,?,?)");
 
 			ps.setString(1, p.getNombre());
 			ps.setString(2, p.getApePat());
@@ -35,18 +35,18 @@ public class PersonaDAOJdbcImpl implements PersonaDAO {
 
 	}
 
-	public List<Persona> listarPersonas() {
-		List<Persona> lista = new ArrayList<Persona>();
+	public List<Alumno> listarAlumnos() {
+		List<Alumno> lista = new ArrayList<Alumno>();
 
 		try {
 			Connection conn = DBConexion.getConexion();
 
 			PreparedStatement ps = conn
-					.prepareStatement("select * from persona");
+					.prepareStatement("select * from alumno");
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				Persona p = new Persona();
+				Alumno p = new Alumno();
 				p.setId(rs.getString("id"));
 				p.setNombre(rs.getString("nombre"));
 				p.setApePat(rs.getString("ape_pat"));
@@ -60,7 +60,7 @@ public class PersonaDAOJdbcImpl implements PersonaDAO {
 		} finally {
 			DBConexion.exit();
 		}
-		System.out.println("Tamanio:"+lista.size());
+		System.out.println("Tamanio:" + lista.size());
 		return lista;
 	}
 

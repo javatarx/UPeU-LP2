@@ -10,4 +10,7 @@ public interface UsuarioDAO {
 	List<Usuario> listar();
 
 	Usuario getUsuarioPorUsername(String username);
+
+	Usuario getUsuarioPorUsernameYContrasenia(String username,
+			String contrasenia);
 }

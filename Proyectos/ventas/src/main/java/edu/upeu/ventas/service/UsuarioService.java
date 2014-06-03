@@ -9,4 +9,6 @@ public interface UsuarioService {
 	void guardarUsuario(UsuarioForm usuario);
 
 	List<UsuarioForm> getListaUsuarios();
+
+	boolean verificarAcceso(String username, String contrasenia);
 }

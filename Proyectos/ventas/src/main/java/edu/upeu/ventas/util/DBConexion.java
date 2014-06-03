@@ -18,6 +18,7 @@ public class DBConexion {
 				conn = DriverManager.getConnection(
 						"jdbc:mysql://localhost:3306/ventas", "root", "123456");
 				System.out.println("Conexion exitosa");
+				return conn;
 			} catch (ClassNotFoundException e) {
 				System.out.println("Conexion fallida");
 				e.printStackTrace();
@@ -31,6 +32,7 @@ public class DBConexion {
 		try {
 			if (conn != null) {
 				conn.close();
+				conn=null;
 				System.out.println("Conexion cerrada");
 			}
 		} catch (SQLException e) {

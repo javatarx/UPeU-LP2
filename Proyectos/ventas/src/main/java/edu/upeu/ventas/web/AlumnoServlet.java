@@ -13,18 +13,18 @@ import edu.upeu.ventas.service.impl.AlumnoServiceImpl;
 import edu.upeu.ventas.web.form.AlumnoForm;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class AlumnoServlet
  */
-public class HomeServlet extends HttpServlet {
+public class AlumnoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VIEW_HOME = "/pages/home.jsp";
+	private static final String VIEW_MAIN = "/pages/alumno/main.jsp";
 
-	AlumnoService personaService = new AlumnoServiceImpl();
+	AlumnoService alumnoService = new AlumnoServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public HomeServlet() {
+	public AlumnoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,14 +35,10 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		List<AlumnoForm> lista = alumnoService.getListaAlumnos();
 
-		List<AlumnoForm> lista = personaService.getListaAlumnos();
-		for (AlumnoForm personaForm : lista) {
-			System.out.println(personaForm.getNombre());
-		}
 		request.setAttribute("lp", lista);
-
-		request.getRequestDispatcher(VIEW_HOME).forward(request, response);
+		request.getRequestDispatcher(VIEW_MAIN).forward(request, response);
 	}
 
 	/**

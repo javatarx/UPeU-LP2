@@ -4,28 +4,24 @@
 <meta charset="utf-8">
 <title>Home</title>
 <link href="resources/css/normalize.css" rel="stylesheet">
-<link href="resources/css/estilo.css" rel="stylesheet">
+<link href="resources/css/estiloLogin.css" rel="stylesheet">
 </head>
 <body>
-	<form action="login" method="post">
-		<div id="contenedorLogin">
+	<div id="contenedorLogin">
+		<form action="login" method="post">
+			<h1>Ingreso al sistema</h1>
 			<p>
-				<img alt="Universidad Peruana Union" src="resources/img/logo.png">
+				<input type="text" name="username" id="username" required autofocus
+					placeholder="Usuario">
 			</p>
 			<p>
-				<label for="username">Usuario:</label> <input type="text"
-					name="username" id="username" required autofocus
-					placeholder="Ingrese su usuario">
-			</p>
-			<p>
-				<label for="password">Contraseña:</label> <input type="password"
-					name="password" id="password" required
-					placeholder="Ingrese su contraseña">
+				<input type="password" name="password" id="password" required
+					placeholder="Contraseña">
 			</p>
 			<p>
 				<input type="submit" value="Ingresar">
 			</p>
-		</div>
-	</form>
+		</form>
+	</div>
 </body>
 </html>

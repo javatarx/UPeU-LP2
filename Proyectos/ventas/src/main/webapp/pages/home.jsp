@@ -1,29 +1,31 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="utf-8">
+<title>Bienvenido al sistema</title>
+<link rel="stylesheet" type="text/css" href="resources/css/estilo.css">
+<script type="text/javascript" src="resources/js/vendor/jquery.js"></script>
 </head>
 <body>
-	<table>
-		<caption>Lista de Personas</caption>
-		<tr>
-			<td colspan="4"><a href="nuevaPersona">Nuevo</a></td>
-		</tr>
-		<tr>
-			<th>#</th>
-			<th>Paterno</th>
-			<th>Materno</th>
-			<th>Nombre</th>
-		</tr>
-		<c:forEach items="${lp}" var="p" varStatus="ps">
-			<tr>
-				<td><c:out value="${ps.count}"></c:out></td>
-				<td><c:out value="${p.apePat}"></c:out></td>
-				<td><c:out value="${p.apeMat}"></c:out></td>
-				<td><c:out value="${p.nombre}"></c:out></td>
-			</tr>
-		</c:forEach>
-
-	</table>
+	<div id="contenedor">
+		<header>
+			<h1>SchoolSystem</h1>
+		</header>
+		<nav>
+			<ul>
+				<li onclick="upeu.cargarUrl('alumnos');">Alumnos</li>
+				<li>Docentes</li>
+				<li>Cursos</li>
+				<li>Salir</li>
+			</ul>
+		</nav>
+		<section>
+			<article id="contenido">
+				<img alt="Universidad Peruana Union" width="250"
+					src="resources/img/logo.png">
+			</article>
+		</section>
+	</div>
+	<script type="text/javascript" src="resources/js/main.js"></script>
 </body>
 </html>

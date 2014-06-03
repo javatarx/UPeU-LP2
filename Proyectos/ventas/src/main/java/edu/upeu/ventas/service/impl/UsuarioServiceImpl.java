@@ -29,4 +29,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return lista;
 	}
 
+	public boolean verificarAcceso(String username, String contrasenia) {
+		Usuario u = usuarioDAO.getUsuarioPorUsernameYContrasenia(username, contrasenia);
+		if(u!=null){
+			return true;
+		}
+		return false;
+	}
+
 }

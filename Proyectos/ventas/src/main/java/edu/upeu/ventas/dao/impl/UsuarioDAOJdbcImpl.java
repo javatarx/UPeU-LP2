@@ -66,7 +66,7 @@ public class UsuarioDAOJdbcImpl implements UsuarioDAO {
 		try {
 			Connection conn = DBConexion.getConexion();
 			PreparedStatement ps = conn
-					.prepareStatement("select codigo,username from usuario where username = ?");
+					.prepareStatement("select id,username from usuario where username = ?");
 			ps.setString(0, username);
 			ResultSet rs = ps.executeQuery();
 
@@ -74,6 +74,31 @@ public class UsuarioDAOJdbcImpl implements UsuarioDAO {
 				u = new Usuario();
 				u.setCodigo(rs.getString(0));
 				u.setUsername(rs.getString(1));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConexion.exit();
+		}
+
+		return u;
+	}
+
+	public Usuario getUsuarioPorUsernameYContrasenia(String username,
+			String contrasenia) {
+		Usuario u = null;
+		try {
+			Connection conn = DBConexion.getConexion();
+			PreparedStatement ps = conn
+					.prepareStatement("select id,username from usuario where username = ? and password = ?");
+			ps.setString(1, username);
+			ps.setString(2, contrasenia);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				u = new Usuario();
+				u.setCodigo(rs.getString(1));
+				u.setUsername(rs.getString(2));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
