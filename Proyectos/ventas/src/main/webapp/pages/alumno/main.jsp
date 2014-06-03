@@ -4,7 +4,8 @@
 		<table class="tabla-cebra">
 			<caption>Lista de Alumnos</caption>
 			<tr>
-				<td colspan="4"><a href="nuevaPersona">+ Nuevo</a></td>
+				<td colspan="4"><a href="#"
+					onclick="upeu.cargarUrl('alumnos/nuevo')">+ Nuevo</a></td>
 			</tr>
 			<tr>
 				<th>#</th>
@@ -24,8 +25,8 @@
 	</c:when>
 	<c:otherwise>
 		<p>
-			<a href="nuevaPersona">+ Nuevo</a>
+			<a href="#" onclick="upeu.cargarUrl('alumnos/nuevo')">+ Nuevo</a>
 		</p>
-		<div class="aviso">No se encontraron resultados</div>
+		<div class="aviso">No se encontraron alumnos</div>
 	</c:otherwise>
 </c:choose>

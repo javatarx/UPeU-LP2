@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>edu.upeu.ventas.web.AlumnoServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AlumnoNuevoServlet</servlet-name>
+  	<display-name>AlumnoNuevoServlet</display-name>
+  	<description></description>
+  	<servlet-class>edu.upeu.ventas.web.AlumnoNuevoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>HomeServlet</servlet-name>
   	<url-pattern>/home</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>AlumnoServlet</servlet-name>
   	<url-pattern>/alumnos</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AlumnoNuevoServlet</servlet-name>
+  	<url-pattern>/alumnos/nuevo</url-pattern>
   </servlet-mapping>
 </web-app>
