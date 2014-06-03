@@ -12,6 +12,7 @@
 				<th>Paterno</th>
 				<th>Materno</th>
 				<th>Nombre</th>
+				<th>Opc</th>
 			</tr>
 			<c:forEach items="${lp}" var="p" varStatus="ps">
 				<tr>
@@ -19,6 +20,8 @@
 					<td><c:out value="${p.apePat}"></c:out></td>
 					<td><c:out value="${p.apeMat}"></c:out></td>
 					<td><c:out value="${p.nombre}"></c:out></td>
+					<td><a href="#"
+						onclick="upeu.cargarAlumno('<c:out value="${p.id}"></c:out>')">[Actualizar]</a></td>
 				</tr>
 			</c:forEach>
 		</table>
