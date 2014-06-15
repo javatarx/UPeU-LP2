@@ -9,11 +9,12 @@ import java.util.List;
 
 import edu.upeu.ventas.dao.AlumnoDAO;
 import edu.upeu.ventas.dominio.Alumno;
+import edu.upeu.ventas.dominio.Usuario;
 import edu.upeu.ventas.util.DBConexion;
 
 public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 
-	public void guardar(Alumno p) {
+	public void insertar(Alumno p) {
 
 		try {
 			Connection conn = DBConexion.getConexion();
@@ -35,7 +36,7 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 
 	}
 
-	public List<Alumno> listarAlumnos() {
+	public List<Alumno> listar() {
 		List<Alumno> lista = new ArrayList<Alumno>();
 
 		try {
@@ -62,6 +63,52 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 		}
 		System.out.println("Tamanio:" + lista.size());
 		return lista;
+	}
+
+	public Alumno getAlumnoPorId(String id) {
+		Alumno a = null;
+		try {
+			Connection conn = DBConexion.getConexion();
+			PreparedStatement ps = conn
+					.prepareStatement("select id, nombre, ape_pat, ape_mat from alumno where id = ?");
+			ps.setString(1, id);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				a = new Alumno();
+				a.setId(rs.getString(1));
+				a.setNombre(rs.getString(2));
+				a.setApePat(rs.getString(3));
+				a.setApeMat(rs.getString(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConexion.exit();
+		}
+
+		return a;
+	}
+
+	public void actualizar(Alumno alumno) {
+		try {
+			Connection conn = DBConexion.getConexion();
+
+			PreparedStatement ps = conn
+					.prepareStatement("update alumno set nombre = ?, ape_pat=?, ape_mat=? where id = ?");
+
+			ps.setString(1, alumno.getNombre());
+			ps.setString(2, alumno.getApePat());
+			ps.setString(3, alumno.getApeMat());
+			ps.setString(4, alumno.getId());
+
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConexion.exit();
+		}
 	}
 
 }

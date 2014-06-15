@@ -67,7 +67,7 @@ public class UsuarioDAOJdbcImpl implements UsuarioDAO {
 			Connection conn = DBConexion.getConexion();
 			PreparedStatement ps = conn
 					.prepareStatement("select id,username from usuario where username = ?");
-			ps.setString(0, username);
+			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {

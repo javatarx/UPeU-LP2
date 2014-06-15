@@ -36,7 +36,7 @@ public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		List<AlumnoForm> lista = personaService.getListaAlumnos();
+		List<AlumnoForm> lista = personaService.listar();
 		for (AlumnoForm personaForm : lista) {
 			System.out.println(personaForm.getNombre());
 		}

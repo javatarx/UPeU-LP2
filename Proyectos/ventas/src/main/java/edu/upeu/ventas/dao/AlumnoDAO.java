@@ -6,8 +6,12 @@ import edu.upeu.ventas.dominio.Alumno;
 
 public interface AlumnoDAO {
 
-	void guardar(Alumno p);
+	void insertar(Alumno p);
 
-	List<Alumno> listarAlumnos();
+	List<Alumno> listar();
+
+	Alumno getAlumnoPorId(String id);
+
+	void actualizar(Alumno alumno);
 
 }

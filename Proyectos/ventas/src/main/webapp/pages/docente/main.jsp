@@ -2,10 +2,10 @@
 <c:choose>
 	<c:when test="${not empty lp}">
 		<table class="tabla-cebra">
-			<caption>Lista de Alumnos</caption>
+			<caption>Lista de Docentes</caption>
 			<tr>
 				<td colspan="5"><a href="#"
-					onclick="upeu.cargarUrl('alumnos/nuevo')">+ Nuevo</a></td>
+					onclick="upeu.cargarUrl('docentes/nuevo')">+ Nuevo</a></td>
 			</tr>
 			<tr>
 				<th>#</th>
@@ -21,15 +21,15 @@
 					<td>${p.apeMat}</td>
 					<td>${p.nombre}</td>
 					<td><a href="#"
-						onclick="upeu.cargarUrl('alumnos/editar?id=${p.id}')">[Edit]</a></td>
+						onclick="upeu.cargarUrl('docentes/editar?id=${p.id}')">[Edit]</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</c:when>
 	<c:otherwise>
 		<p>
-			<a href="#" onclick="upeu.cargarUrl('alumnos/nuevo')">+ Nuevo</a>
+			<a href="#" onclick="upeu.cargarUrl('docentes/nuevo')">+ Nuevo</a>
 		</p>
-		<div class="aviso">No se encontraron alumnos</div>
+		<div class="aviso">No se encontraron docentes</div>
 	</c:otherwise>
 </c:choose>
