@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import edu.upeu.ventas.dao.AlumnoDAO;
-import edu.upeu.ventas.dao.impl.AlumnoDAOHibernateImpl;
+import edu.upeu.ventas.dao.hibernate.impl.AlumnoDAOHibernateImpl;
 import edu.upeu.ventas.dominio.Alumno;
 import edu.upeu.ventas.service.AlumnoService;
 import edu.upeu.ventas.web.form.AlumnoForm;

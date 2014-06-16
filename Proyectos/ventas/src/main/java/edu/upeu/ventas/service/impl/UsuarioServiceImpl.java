@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.upeu.ventas.dao.UsuarioDAO;
-import edu.upeu.ventas.dao.impl.UsuarioDAOJdbcImpl;
+import edu.upeu.ventas.dao.jdbc.impl.UsuarioDAOJdbcImpl;
 import edu.upeu.ventas.dominio.Usuario;
 import edu.upeu.ventas.service.UsuarioService;
 import edu.upeu.ventas.web.form.UsuarioForm;

@@ -1,4 +1,4 @@
-package edu.upeu.ventas.dao.impl;
+package edu.upeu.ventas.dao.hibernate.impl;
 
 import java.util.List;
 

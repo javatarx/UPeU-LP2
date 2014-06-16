@@ -6,14 +6,14 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import edu.upeu.ventas.dao.DocenteDAO;
-import edu.upeu.ventas.dao.impl.DocenteDAOJdbcImpl;
+import edu.upeu.ventas.dao.hibernate.impl.DocenteDAOHibernateImpl;
 import edu.upeu.ventas.dominio.Docente;
 import edu.upeu.ventas.service.DocenteService;
 import edu.upeu.ventas.web.form.DocenteForm;
 
-public class DocenteServiceImpl implements DocenteService{
+public class DocenteServiceImpl implements DocenteService {
 
-	DocenteDAO docenteDAO = new DocenteDAOJdbcImpl();
+	DocenteDAO docenteDAO = new DocenteDAOHibernateImpl();
 
 	public List<DocenteForm> listar() {
 
@@ -23,7 +23,7 @@ public class DocenteServiceImpl implements DocenteService{
 
 		for (Docente p : lista) {
 			DocenteForm pf = new DocenteForm();
-			pf.setId(p.getId());
+			pf.setId(p.getId().toString());
 			pf.setNombre(p.getNombre());
 			pf.setApePat(p.getApePat());
 			pf.setApeMat(p.getApeMat());
@@ -43,7 +43,7 @@ public class DocenteServiceImpl implements DocenteService{
 		if (StringUtils.isEmpty(df.getId())) {
 			docenteDAO.insertar(d);
 		} else {
-			d.setId(df.getId());
+			d.setId(new Long(df.getId()));
 			docenteDAO.actualizar(d);
 		}
 
@@ -54,7 +54,7 @@ public class DocenteServiceImpl implements DocenteService{
 		Docente d = docenteDAO.getDocentePorId(id);
 
 		if (d != null) {
-			df.setId(d.getId());
+			df.setId(d.getId().toString());
 			df.setNombre(d.getNombre());
 			df.setApePat(d.getApePat());
 			df.setApeMat(d.getApeMat());

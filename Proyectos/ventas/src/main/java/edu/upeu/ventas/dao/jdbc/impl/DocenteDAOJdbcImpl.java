@@ -1,4 +1,4 @@
-package edu.upeu.ventas.dao.impl;
+package edu.upeu.ventas.dao.jdbc.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +26,7 @@ public class DocenteDAOJdbcImpl implements DocenteDAO {
 
 			while (rs.next()) {
 				Docente d = new Docente();
-				d.setId(rs.getString("id"));
+				d.setId(rs.getLong("id"));
 				d.setNombre(rs.getString("nombre"));
 				d.setApePat(rs.getString("ape_pat"));
 				d.setApeMat(rs.getString("ape_mat"));
@@ -52,7 +52,7 @@ public class DocenteDAOJdbcImpl implements DocenteDAO {
 			ps.setString(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				d.setId(rs.getString("id"));
+				d.setId(rs.getLong("id"));
 				d.setNombre(rs.getString("nombre"));
 				d.setApePat(rs.getString("ape_pat"));
 				d.setApeMat(rs.getString("ape_mat"));
@@ -94,7 +94,7 @@ public class DocenteDAOJdbcImpl implements DocenteDAO {
 			ps.setString(1, d.getNombre());
 			ps.setString(2, d.getApePat());
 			ps.setString(3, d.getApeMat());
-			ps.setString(4, d.getId());
+			ps.setLong(4, d.getId());
 
 			ps.executeUpdate();
 

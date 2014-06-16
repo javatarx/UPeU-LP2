@@ -1,4 +1,4 @@
-package edu.upeu.ventas.dao.impl;
+package edu.upeu.ventas.dao.jdbc.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
