@@ -1,17 +1,37 @@
 package edu.upeu.ventas.dominio;
 
-public class Alumno {
+import java.io.Serializable;
 
-	private String id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "ALUMNO")
+public class Alumno implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	@Column(name = "ID_ALUMNO")
+	private Long id;
+	@Column(name = "NOMBRE")
 	private String nombre;
+	@Column(name = "APELLIDO_PATERNO")
 	private String apePat;
+	@Column(name = "APELLIDO_MATERNO")
 	private String apeMat;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

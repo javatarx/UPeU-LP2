@@ -6,14 +6,14 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import edu.upeu.ventas.dao.AlumnoDAO;
-import edu.upeu.ventas.dao.impl.AlumnoDAOJdbcImpl;
+import edu.upeu.ventas.dao.impl.AlumnoDAOHibernateImpl;
 import edu.upeu.ventas.dominio.Alumno;
 import edu.upeu.ventas.service.AlumnoService;
 import edu.upeu.ventas.web.form.AlumnoForm;
 
 public class AlumnoServiceImpl implements AlumnoService {
 
-	AlumnoDAO alumnoDAO = new AlumnoDAOJdbcImpl();
+	AlumnoDAO alumnoDAO = new AlumnoDAOHibernateImpl();
 
 	public List<AlumnoForm> listar() {
 
@@ -24,7 +24,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 
 		for (Alumno p : lista) {
 			AlumnoForm pf = new AlumnoForm();
-			pf.setId(p.getId());
+			pf.setId(p.getId().toString());
 			pf.setNombre(p.getNombre());
 			pf.setApePat(p.getApePat());
 			pf.setApeMat(p.getApeMat());
@@ -44,7 +44,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 		if (StringUtils.isEmpty(a.getId())) {
 			alumnoDAO.insertar(alumno);
 		} else {
-			alumno.setId(a.getId());
+			alumno.setId(new Long(a.getId()));
 			alumnoDAO.actualizar(alumno);
 		}
 
@@ -55,7 +55,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 		Alumno alumno = alumnoDAO.getAlumnoPorId(id);
 
 		if (alumno != null) {
-			a.setId(alumno.getId());
+			a.setId(alumno.getId().toString());
 			a.setNombre(alumno.getNombre());
 			a.setApePat(alumno.getApePat());
 			a.setApeMat(alumno.getApeMat());

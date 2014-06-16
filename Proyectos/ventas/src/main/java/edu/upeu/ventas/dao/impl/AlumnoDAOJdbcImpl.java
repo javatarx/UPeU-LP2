@@ -9,7 +9,6 @@ import java.util.List;
 
 import edu.upeu.ventas.dao.AlumnoDAO;
 import edu.upeu.ventas.dominio.Alumno;
-import edu.upeu.ventas.dominio.Usuario;
 import edu.upeu.ventas.util.DBConexion;
 
 public class AlumnoDAOJdbcImpl implements AlumnoDAO {
@@ -48,7 +47,7 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 
 			while (rs.next()) {
 				Alumno p = new Alumno();
-				p.setId(rs.getString("id"));
+				p.setId(rs.getLong("id"));
 				p.setNombre(rs.getString("nombre"));
 				p.setApePat(rs.getString("ape_pat"));
 				p.setApeMat(rs.getString("ape_mat"));
@@ -76,7 +75,7 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 
 			if (rs.next()) {
 				a = new Alumno();
-				a.setId(rs.getString(1));
+				a.setId(rs.getLong(1));
 				a.setNombre(rs.getString(2));
 				a.setApePat(rs.getString(3));
 				a.setApeMat(rs.getString(4));
@@ -100,7 +99,7 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 			ps.setString(1, alumno.getNombre());
 			ps.setString(2, alumno.getApePat());
 			ps.setString(3, alumno.getApeMat());
-			ps.setString(4, alumno.getId());
+			ps.setLong(4, alumno.getId());
 
 			ps.executeUpdate();
 
