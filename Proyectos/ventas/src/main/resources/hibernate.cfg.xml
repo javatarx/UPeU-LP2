@@ -5,14 +5,18 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.password">123456</property>
+<!-- 		<property name="hibernate.connection.password">123456</property> -->
 		<property name="hibernate.connection.url">jdbc:mysql://localhost/school</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<mapping class="edu.upeu.ventas.dominio.Alumno" />
+<<<<<<< HEAD
 		<mapping class="edu.upeu.ventas.dominio.Docente" />
 		<mapping class="edu.upeu.ventas.dominio.Curso" />
+=======
+		<mapping class="edu.upeu.ventas.dominio.Docente"/>
+>>>>>>> branch 'master' of https://github.com/jsempai/UPeU-LP2.git
 	</session-factory>
 </hibernate-configuration>

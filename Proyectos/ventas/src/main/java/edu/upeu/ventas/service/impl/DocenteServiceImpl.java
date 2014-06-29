@@ -23,7 +23,11 @@ public class DocenteServiceImpl implements DocenteService {
 
 		for (Docente p : lista) {
 			DocenteForm pf = new DocenteForm();
+<<<<<<< HEAD
 			pf.setId(p.getId() + "");
+=======
+			pf.setId(p.getId().toString());
+>>>>>>> branch 'master' of https://github.com/jsempai/UPeU-LP2.git
 			pf.setNombre(p.getNombre());
 			pf.setApePat(p.getApePat());
 			pf.setApeMat(p.getApeMat());
@@ -54,7 +58,11 @@ public class DocenteServiceImpl implements DocenteService {
 		Docente d = docenteDAO.getDocentePorId(id);
 
 		if (d != null) {
+<<<<<<< HEAD
 			df.setId(d.getId() + "");
+=======
+			df.setId(d.getId().toString());
+>>>>>>> branch 'master' of https://github.com/jsempai/UPeU-LP2.git
 			df.setNombre(d.getNombre());
 			df.setApePat(d.getApePat());
 			df.setApeMat(d.getApeMat());

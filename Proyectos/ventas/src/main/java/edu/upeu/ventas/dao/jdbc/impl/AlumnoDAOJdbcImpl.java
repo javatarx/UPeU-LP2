@@ -110,9 +110,12 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 		}
 	}
 
+<<<<<<< HEAD
 	public void eliminarCursoAlumno(String idAlumno, String idCurso) {
 		// TODO Auto-generated method stub
 		
 	}
 
+=======
+>>>>>>> branch 'master' of https://github.com/jsempai/UPeU-LP2.git
 }
