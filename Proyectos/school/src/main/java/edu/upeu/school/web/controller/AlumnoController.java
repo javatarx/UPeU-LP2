@@ -40,4 +40,5 @@ public class AlumnoController {
 		alumnoService.guardarAlumno(af);
 		return "redirect:/alumnos/";
 	}
+
 }

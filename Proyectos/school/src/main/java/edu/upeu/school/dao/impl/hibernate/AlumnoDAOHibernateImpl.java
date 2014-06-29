@@ -16,7 +16,6 @@ public class AlumnoDAOHibernateImpl extends
 				.add(Restrictions.idEq(new Long(idAlumno))).uniqueResult();
 		for (Curso c : a.getCursos()) {
 			if (c.getId().toString().equals(idCurso)) {
-				System.out.println("El curso eliminado es:" + c.getNombre());
 				a.getCursos().remove(c);
 			}
 		}
