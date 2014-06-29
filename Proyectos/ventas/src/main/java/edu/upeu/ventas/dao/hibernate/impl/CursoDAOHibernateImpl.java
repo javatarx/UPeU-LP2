@@ -1,4 +1,4 @@
-package edu.upeu.ventas.dao.impl;
+package edu.upeu.ventas.dao.hibernate.impl;
 
 import java.util.List;
 
@@ -6,44 +6,44 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
-import edu.upeu.ventas.dao.AlumnoDAO;
-import edu.upeu.ventas.dominio.Alumno;
+import edu.upeu.ventas.dao.CursoDAO;
+import edu.upeu.ventas.dominio.Curso;
 import edu.upeu.ventas.util.HibernateUtil;
 
-public class AlumnoDAOHibernateImpl implements AlumnoDAO {
-	private SessionFactory sessionFactory = HibernateUtil.getSessionfactory();
-	private Session session = null;
+public class CursoDAOHibernateImpl implements CursoDAO {
 
-	public void insertar(Alumno p) {
+	private SessionFactory sessionFactory = HibernateUtil.getSessionfactory();
+	private Session session;
+
+	public void insertar(Curso c) {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(p);
+		session.save(c);
 		session.getTransaction().commit();
 		session.close();
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Alumno> listar() {
+	public List<Curso> listar() {
 		session = sessionFactory.openSession();
-		List<Alumno> lista = session.createCriteria(Alumno.class).list();
+		List<Curso> lista = session.createCriteria(Curso.class).list();
 		session.close();
 		return lista;
 	}
 
-	public Alumno getAlumnoPorId(String id) {
+	public Curso getCursoPorId(String id) {
 		session = sessionFactory.openSession();
-		Alumno a = (Alumno) session.createCriteria(Alumno.class)
+		Curso c = (Curso) session.createCriteria(Curso.class)
 				.add(Restrictions.idEq(new Long(id))).uniqueResult();
 		session.close();
-		return a;
+		return c;
 	}
 
-	public void actualizar(Alumno alumno) {
+	public void actualizar(Curso c) {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.update(alumno);
+		session.update(c);
 		session.getTransaction().commit();
 		session.close();
-
 	}
+
 }

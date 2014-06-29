@@ -1,4 +1,4 @@
-package edu.upeu.ventas.dao.impl;
+package edu.upeu.ventas.dao.jdbc.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -108,6 +108,11 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 		} finally {
 			DBConexion.exit();
 		}
+	}
+
+	public void eliminarCursoAlumno(String idAlumno, String idCurso) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

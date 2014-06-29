@@ -12,5 +12,7 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<mapping class="edu.upeu.ventas.dominio.Alumno" />
+		<mapping class="edu.upeu.ventas.dominio.Docente" />
+		<mapping class="edu.upeu.ventas.dominio.Curso" />
 	</session-factory>
 </hibernate-configuration>

@@ -10,4 +10,8 @@ public interface AlumnoService {
 	void guardar(AlumnoForm p);
 
 	AlumnoForm getAlumnoPorId(String id);
+
+	AlumnoForm getAlumnoCursosPorId(String id);
+
+	void eliminarCursoAlumno(String idAlumno, String idCurso);
 }

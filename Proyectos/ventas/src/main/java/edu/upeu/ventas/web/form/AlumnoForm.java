@@ -1,11 +1,22 @@
 package edu.upeu.ventas.web.form;
 
+import java.util.List;
+
 public class AlumnoForm {
 
 	private String id;
 	private String nombre;
 	private String apePat;
 	private String apeMat;
+	private List<CursoForm> cursos;
+
+	public List<CursoForm> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(List<CursoForm> cursos) {
+		this.cursos = cursos;
+	}
 
 	public String getId() {
 		return id;

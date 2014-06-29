@@ -52,6 +52,42 @@
 		<description></description>
 		<servlet-class>edu.upeu.ventas.web.docente.DocenteEditarServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CursoServlet</servlet-name>
+		<display-name>CursoServlet</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.curso.CursoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CursoNuevoServlet</servlet-name>
+		<display-name>CursoNuevoServlet</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.curso.CursoNuevoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CursoEditarServlet</servlet-name>
+		<display-name>CursoEditarServlet</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.curso.CursoEditarServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AlumnoCursoServlet</servlet-name>
+		<display-name>AlumnoCursoServlet</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.alumno.AlumnoCursoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AlumnoCursoEliminar</servlet-name>
+		<display-name>AlumnoCursoEliminar</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.alumno.AlumnoCursoEliminar</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AlumnoCursoEditar</servlet-name>
+		<display-name>AlumnoCursoEditar</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.alumno.AlumnoCursoEditar</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeServlet</servlet-name>
 		<url-pattern>/home</url-pattern>
@@ -83,5 +119,29 @@
 	<servlet-mapping>
 		<servlet-name>DocenteEditarServlet</servlet-name>
 		<url-pattern>/docentes/editar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CursoServlet</servlet-name>
+		<url-pattern>/cursos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CursoNuevoServlet</servlet-name>
+		<url-pattern>/cursos/nuevo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CursoEditarServlet</servlet-name>
+		<url-pattern>/cursos/editar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlumnoCursoServlet</servlet-name>
+		<url-pattern>/alumnos/curso</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlumnoCursoEliminar</servlet-name>
+		<url-pattern>/alumnos/curso/eliminar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlumnoCursoEditar</servlet-name>
+		<url-pattern>/alumnos/curso/editar</url-pattern>
 	</servlet-mapping>
 </web-app>

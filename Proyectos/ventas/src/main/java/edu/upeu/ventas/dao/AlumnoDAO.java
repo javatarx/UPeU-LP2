@@ -14,4 +14,6 @@ public interface AlumnoDAO {
 
 	void actualizar(Alumno alumno);
 
+	void eliminarCursoAlumno(String idAlumno, String idCurso);
+
 }
