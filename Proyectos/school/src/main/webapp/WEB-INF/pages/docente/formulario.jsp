@@ -1,7 +1,7 @@
 <%@include file="/common/taglibs.jsp"%>
 <c:choose>
 	<c:when test="${not empty docente.id}">
-		<c:url value="docentes/editar" var="urlSubmit">
+		<c:url value="docentes/${docente.id}" var="urlSubmit">
 		</c:url>
 	</c:when>
 	<c:otherwise>
@@ -16,16 +16,16 @@
 			placeholder="Nombre" autofocus="autofocus" required>
 	</p>
 	<p>
-		<input type="text" value="${docente.apePat}" name="paterno"
+		<input type="text" value="${docente.apePat}" name="apePat"
 			placeholder="Paterno" required>
 	</p>
 	<p>
-		<input type="text" value="${docente.apeMat}" name="materno"
+		<input type="text" value="${docente.apeMat}" name="apeMat"
 			placeholder="Materno" required>
 	</p>
 	<p>
 		<input type="submit" value="Guardar">&nbsp;&nbsp;&nbsp;<input
-			type="button" value="Cancelar" onclick="upeu.cargarUrl('docentes');">
+			type="button" value="Cancelar" onclick="upeu.cargarUrl('docentes/');">
 		<c:if test="${not empty docente.id}">
 			<input type="hidden" name="id" value="${docente.id}">
 		</c:if>
