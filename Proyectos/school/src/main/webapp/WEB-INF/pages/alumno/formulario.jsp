@@ -1,7 +1,7 @@
 <%@include file="/common/taglibs.jsp"%>
 <c:choose>
 	<c:when test="${not empty alumno.id}">
-		<c:url value="alumnos/editar" var="urlSubmit">
+		<c:url value="alumnos/${alumno.id}" var="urlSubmit">
 		</c:url>
 	</c:when>
 	<c:otherwise>
@@ -25,7 +25,7 @@
 	</p>
 	<p>
 		<input type="submit" value="Guardar">&nbsp;&nbsp;&nbsp;<input
-			type="button" value="Cancelar" onclick="upeu.cargarUrl('alumnos');">
+			type="button" value="Cancelar" onclick="upeu.cargarUrl('alumnos/');">
 		<c:if test="${not empty alumno.id}">
 			<input type="hidden" name="id" value="${alumno.id}">
 		</c:if>

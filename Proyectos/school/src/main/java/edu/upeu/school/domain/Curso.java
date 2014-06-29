@@ -19,10 +19,10 @@ public class Curso implements Serializable {
 
 	private static final long serialVersionUID = -2701724388095813764L;
 	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(generator = "genId")
+	@GenericGenerator(name = "genId", strategy = "edu.upeu.school.util.GeneradorIDRandom")
 	@Column(name = "ID_CURSO")
-	private Long id;
+	private String id;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	@Column(name = "NRO_HORAS")
@@ -41,11 +41,11 @@ public class Curso implements Serializable {
 		this.alumnos = alumnos;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

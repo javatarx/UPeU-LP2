@@ -49,10 +49,24 @@ public class AlumnoServiceImpl implements AlumnoService {
 		if (StringUtils.isEmpty(af.getId())) {
 			alumnoDAO.insert(alumno);
 		} else {
-			alumno.setId(new Long(af.getId()));
+			alumno.setId(af.getId());
 			alumnoDAO.update(alumno);
 		}
 
+	}
+
+	public AlumnoForm getAlumnoPorId(String id) {
+		AlumnoForm a = new AlumnoForm();
+		Alumno alumno = alumnoDAO.findByPK(Alumno.class, id);
+
+		if (alumno != null) {
+			a.setId(alumno.getId().toString());
+			a.setNombre(alumno.getNombre());
+			a.setApePat(alumno.getApePat());
+			a.setApeMat(alumno.getApeMat());
+		}
+
+		return a;
 	}
 
 }

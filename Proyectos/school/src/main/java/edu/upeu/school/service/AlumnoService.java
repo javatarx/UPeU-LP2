@@ -10,4 +10,6 @@ public interface AlumnoService {
 
 	void guardarAlumno(AlumnoForm af);
 
+	AlumnoForm getAlumnoPorId(String id);
+
 }

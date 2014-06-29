@@ -17,10 +17,10 @@ public class Docente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(generator = "genId")
+	@GenericGenerator(name = "genId", strategy = "edu.upeu.school.util.GeneradorIDRandom")
 	@Column(name = "id")
-	private Long id;
+	private String id;
 	@Column(name = "nombre")
 	private String nombre;
 	@Column(name = "ape_pat")
@@ -28,11 +28,11 @@ public class Docente implements Serializable {
 	@Column(name = "ape_mat")
 	private String apeMat;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

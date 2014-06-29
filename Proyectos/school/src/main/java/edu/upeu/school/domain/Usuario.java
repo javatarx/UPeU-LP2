@@ -16,10 +16,10 @@ public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = -1866810597143940033L;
 	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(generator = "genId")
+	@GenericGenerator(name = "genId", strategy = "edu.upeu.school.util.GeneradorIDRandom")
 	@Column(name = "ID_USUARIO")
-	private Long id;
+	private String id;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	@Column(name = "USERNAME")
@@ -27,11 +27,11 @@ public class Usuario implements Serializable {
 	@Column(name = "PASSWD")
 	private String password;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

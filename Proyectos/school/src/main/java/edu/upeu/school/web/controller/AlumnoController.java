@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,9 +36,25 @@ public class AlumnoController {
 	}
 
 	@RequestMapping(value = "/nuevo", method = RequestMethod.POST)
-	public String guardarAlumno(@ModelAttribute AlumnoForm af,
+	public String guardarAlumnoNuevo(@ModelAttribute AlumnoForm af,
 			BindingResult result, Model model) {
 		alumnoService.guardarAlumno(af);
+		return "redirect:/alumnos/";
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public String mostrarFormularioAlumno(@PathVariable String id, Model model) {
+		AlumnoForm alumno = alumnoService.getAlumnoPorId(id);
+		model.addAttribute("alumno", alumno);
+
+		return "alumno/formulario";
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
+	public String actualizarAlumno(@PathVariable String id,
+			@ModelAttribute AlumnoForm af, Model model) {
+		alumnoService.guardarAlumno(af);
+
 		return "redirect:/alumnos/";
 	}
 

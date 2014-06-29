@@ -21,9 +21,9 @@
 					<td>${p.apeMat}</td>
 					<td>${p.nombre}</td>
 					<td><a href="#"
-						onclick="upeu.cargarUrl('alumnos/editar?id=${p.id}')">[Edit]</a>
+						onclick="upeu.cargarUrl('alumnos/${p.id}')">[Edit]</a>
 						&nbsp;&nbsp; <a href="#"
-						onclick="upeu.cargarUrl('alumnos/curso?id=${p.id}')">[Cursos]</a>
+						onclick="upeu.cargarUrl('alumnos/${p.id}/cursos')">[Cursos]</a>
 					</td>
 				</tr>
 			</c:forEach>
