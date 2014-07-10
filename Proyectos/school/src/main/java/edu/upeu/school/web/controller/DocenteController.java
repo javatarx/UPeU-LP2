@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.upeu.school.service.DocenteService;
 import edu.upeu.school.web.form.DocenteForm;
@@ -61,8 +62,7 @@ public class DocenteController {
 	}
 
 	@RequestMapping(value = "/{id}/cursos", method = RequestMethod.GET)
-	public String mostrarFormularioDocenteCursos(@PathVariable String id,
-			Model model) {
+	public String mostrarDocenteCursos(@PathVariable String id, Model model) {
 
 		DocenteForm df = docenteService.getDocenteCursosPorId(id);
 		model.addAttribute("docente", df);
@@ -70,4 +70,22 @@ public class DocenteController {
 		return "docente/docente_cursos";
 	}
 
+	@RequestMapping(value = "/{id}/cursos/editar", method = RequestMethod.GET)
+	public String mostrarFormularioDocenteCursos(@PathVariable String id,
+			Model model) {
+
+		DocenteForm df = docenteService.getDocenteAllCursosPorId(id);
+		model.addAttribute("docente", df);
+
+		return "docente/formulario_cursos";
+	}
+
+	@RequestMapping(value = "/{id}/cursos/editar", method = RequestMethod.POST)
+	public String guardarDocenteCursos(@PathVariable String id,
+			@RequestParam(value = "id_curso") String[] ids, Model model) {
+
+		docenteService.guardarCursosDocente(id,ids);
+
+		return "redirect:/docentes/" + id + "/cursos";
+	}
 }

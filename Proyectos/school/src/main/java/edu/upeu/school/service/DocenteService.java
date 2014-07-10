@@ -14,5 +14,9 @@ public interface DocenteService {
 	
 	DocenteForm getDocenteCursosPorId(String id);
 	
-	void guardarDocenteCursos(DocenteForm df);
+	void guardarCursosDocente(DocenteForm df);
+
+	DocenteForm getDocenteAllCursosPorId(String id);
+
+	void guardarCursosDocente(String id, String[] ids);
 }
