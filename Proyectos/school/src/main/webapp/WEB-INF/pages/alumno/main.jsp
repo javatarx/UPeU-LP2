@@ -20,11 +20,12 @@
 					<td>${p.apePat}</td>
 					<td>${p.apeMat}</td>
 					<td>${p.nombre}</td>
-					<td><a href="#"
-						onclick="upeu.cargarUrl('alumnos/${p.id}')">[Edit]</a>
-						&nbsp;&nbsp; <a href="#"
-						onclick="upeu.cargarUrl('alumnos/${p.id}/cursos')">[Cursos]</a>
-					</td>
+					<td><span title="Editar"
+						onclick="upeu.cargarUrl('alumnos/${p.id}')"
+						class="icon-pen icon-verde"></span> &nbsp;&nbsp; <span
+						title="Ver Cursos"
+						onclick="upeu.cargarUrl('alumnos/${p.id}/cursos')"
+						class="icon-book-alt2 icon-verde"></span></td>
 				</tr>
 			</c:forEach>
 		</table>

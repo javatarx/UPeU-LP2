@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.upeu.school.service.AlumnoService;
+import edu.upeu.school.service.CursoService;
 import edu.upeu.school.web.form.AlumnoForm;
 
 @Controller
@@ -20,6 +21,8 @@ public class AlumnoController {
 
 	@Autowired
 	private AlumnoService alumnoService;
+	@Autowired
+	private CursoService cursoService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String listarAlumnos(Model model) {
@@ -58,4 +61,11 @@ public class AlumnoController {
 		return "redirect:/alumnos/";
 	}
 
+	@RequestMapping(value = "/{id}/cursos", method = RequestMethod.GET)
+	public String mostrarFormularioCursoAlumno(@PathVariable String id, Model model) {
+		AlumnoForm alumno = alumnoService.getAlumnoPorId(id);
+		model.addAttribute("alumno", alumno);
+
+		return "alumno/formulario";
+	}
 }

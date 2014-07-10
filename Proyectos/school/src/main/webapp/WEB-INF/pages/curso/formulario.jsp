@@ -25,7 +25,7 @@
 	</p>
 	<p>
 		<input type="submit" value="Guardar">&nbsp;&nbsp;&nbsp;<input
-			type="button" value="Cancelar" onclick="upeu.cargarUrl('cursos');">
+			type="button" value="Cancelar" onclick="upeu.cargarUrl('cursos/');">
 		<c:if test="${not empty curso.id}">
 			<input type="hidden" name="id" value="${curso.id}">
 		</c:if>

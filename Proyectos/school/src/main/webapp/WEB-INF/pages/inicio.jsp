@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Bienvenido al sistema</title>
+<link rel="stylesheet" type="text/css" href="static/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="static/css/estilo.css">
+<link rel="stylesheet" type="text/css" href="static/css/iconos.css">
 <script type="text/javascript" src="static/js/vendor/jquery.js"></script>
 <script type="text/javascript" src="static/js/vendor/jquery.form.js"></script>
 </head>
@@ -15,10 +17,10 @@
 		<div id="main">
 			<nav>
 				<ul>
-					<li onclick="upeu.cargarUrl('alumnos/');">Alumnos</li>
-					<li onclick="upeu.cargarUrl('docentes/');">Docentes</li>
-					<li onclick="upeu.cargarUrl('cursos/');">Cursos</li>
-					<li>Salir</li>
+					<li onclick="upeu.cargarUrl('alumnos/');"><span class="icon-pin">&nbsp;</span>Alumnos</li>
+					<li onclick="upeu.cargarUrl('docentes/');"><span class="icon-user">&nbsp;</span>Docentes</li>
+					<li onclick="upeu.cargarUrl('cursos/');"><span class="icon-book">&nbsp;</span>Cursos</li>
+					<li onclick="location.href='logout'"><span class="icon-bolt">&nbsp;</span>Salir</li>
 				</ul>
 			</nav>
 			<section>

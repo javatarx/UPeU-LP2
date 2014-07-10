@@ -60,4 +60,14 @@ public class DocenteController {
 		return "redirect:/docentes/";
 	}
 
+	@RequestMapping(value = "/{id}/cursos", method = RequestMethod.GET)
+	public String mostrarFormularioDocenteCursos(@PathVariable String id,
+			Model model) {
+
+		DocenteForm df = docenteService.getDocenteCursosPorId(id);
+		model.addAttribute("docente", df);
+
+		return "docente/docente_cursos";
+	}
+
 }

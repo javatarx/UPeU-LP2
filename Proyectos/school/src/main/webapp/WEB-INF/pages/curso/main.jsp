@@ -20,8 +20,9 @@
 					<td>${p.nombre}</td>
 					<td>${p.nroCreditos}</td>
 					<td>${p.nroHoras}</td>
-					<td><a href="#"
-						onclick="upeu.cargarUrl('cursos/editar?id=${p.id}')">[Edit]</a></td>
+					<td><span title="Clic para editar"
+						onclick="upeu.cargarUrl('cursos/${p.id}')"
+						class="icon-pen icon-verde"></span></td>
 				</tr>
 			</c:forEach>
 		</table>

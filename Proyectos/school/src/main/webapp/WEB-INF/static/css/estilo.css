@@ -1,7 +1,6 @@
 body {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	margin: 0 auto;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -16,8 +15,9 @@ h1 {
 }
 
 header {
+	background: #fefefe;
 	border-bottom: 3px solid #A7C942;
-	display: block;
+	/* 	display: block; */
 	min-height: 5em;
 }
 
@@ -40,11 +40,13 @@ input[type=button] {
 }
 
 nav {
+	height: 100%;
 	left: 0px;
 	padding: 0px;
 	position: absolute;
 	text-align: left;
-	top: 5em;
+	width: 200px;
+	/* 	top: 5em; */
 }
 
 nav ul {
@@ -62,13 +64,27 @@ nav ul li {
 	display: block;
 	font-weight: bold;
 	margin: 0px;
-	padding: 10px 15px;
+	padding: 10px 25px;
 	text-transform: uppercase;
 }
 
 nav ul li:hover {
-	background: rgba(138, 192, 7, 0.1);
-	color: #A7C942;
+	background: #8AB116;
+	color: #fefefe;
+}
+
+section {
+	margin-left: 200px; overflow : hidden;
+	width: auto;
+	z-index: 1;
+	overflow: hidden;
+}
+
+section article {
+	background: #fefefe;
+	height: 100%;
+	padding-left: -200px;
+	width: 100%;
 }
 
 #contenido {
@@ -76,18 +92,15 @@ nav ul li:hover {
 }
 
 #contenedor {
-	background: #fefefe;
-	border: 3px solid #A7C942;
-	box-shadow: 2px 2px 5px #A7C942;
-	box-sizing: border-box;
+	background: #A7C942;
 	margin: 25px auto;
 	padding-bottom: 25px;
 	position: relative;
-	width: 80%;
+	width: 100%;
 }
 
 #contenedor nav,section {
-	display: inline-block;
+	/* 	display: inline-block; */
 	vertical-align: top;
 }
 
@@ -136,5 +149,11 @@ nav ul li:hover {
 
 .tabla-cebra tr:nth-child(1) td a {
 	color: #A7C942;
+	text-decoration: none;
+}
+
+.icon-verde {
+	color: #A7C942;
+	cursor: pointer;
 	text-decoration: none;
 }

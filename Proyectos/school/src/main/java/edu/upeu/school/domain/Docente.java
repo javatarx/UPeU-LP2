@@ -1,11 +1,14 @@
 package edu.upeu.school.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -27,6 +30,8 @@ public class Docente implements Serializable {
 	private String apePat;
 	@Column(name = "ape_mat")
 	private String apeMat;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "docente")
+	private Set<DocenteCurso> cursos;
 
 	public String getId() {
 		return id;
@@ -58,6 +63,14 @@ public class Docente implements Serializable {
 
 	public void setApeMat(String apeMat) {
 		this.apeMat = apeMat;
+	}
+
+	public Set<DocenteCurso> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(Set<DocenteCurso> cursos) {
+		this.cursos = cursos;
 	}
 
 }
